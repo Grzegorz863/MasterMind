@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Animator))]
 public class Board : MonoBehaviour {
 
 	GameObject enemy;
@@ -17,7 +18,10 @@ public class Board : MonoBehaviour {
 	int counter=0;
 	int hit=0;
 	int halfHit=0;
-
+	GameObject cipher;
+	Color randomColor;
+	GameObject chest;
+	ChestAnimation chestAnimation = new ChestAnimation();
 	private float timer = 0;
 
 	void UpdateTime() 
@@ -26,16 +30,32 @@ public class Board : MonoBehaviour {
 		Debug.Log(timer);
 	}
 
+	void Update()
+	{
+		
+	}
+
 	public void QuitGame(){
+		
+		//GameObject.Find("treasurechest_open").GetComponent<Animator>().SetInteger("zmienna", 1);
+		//Animator animator = GameObject.Find("treasurechest_open").GetComponent<Animator>();
+		//Animation anim = chest.GetComponent<Animation>();
+		//anim.Play("Take 001");
+		//ChestAnimation chestAnim = new ChestAnimation();
+		//chestAnim.OpenChest();
+		//System.Threading.Thread.Sleep(5000);
+		//StartCoroutine("WaitFiveSeconds");
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex +1 );
+	}
+
+	IEnumerator WaitFiveSeconds()
+	{
+		yield return new WaitForSeconds(5);
 	}
 
 	public void NewGame(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex - 1);
 	}
-
-	GameObject cipher;
-	Color randomColor;
 
 	void randomColorSet(){
 		int number= Random.Range(1,7);
@@ -1272,4 +1292,6 @@ public class Board : MonoBehaviour {
 			}
 		}
 	}
+
+
 }
