@@ -24,6 +24,9 @@ public class Board : MonoBehaviour {
 	ChestAnimation chestAnimation = new ChestAnimation();
 	private float timer = 0;
 
+	public GameObject pauseMenu;
+	public GameObject mainGame;
+
 	void UpdateTime() 
 	{
 		timer += Time.deltaTime;
@@ -36,7 +39,7 @@ public class Board : MonoBehaviour {
 	}
 
 	public void QuitGame(){
-		
+
 		//GameObject.Find("treasurechest_open").GetComponent<Animator>().SetInteger("zmienna", 1);
 		//Animator animator = GameObject.Find("treasurechest_open").GetComponent<Animator>();
 		//Animation anim = chest.GetComponent<Animation>();
@@ -45,7 +48,9 @@ public class Board : MonoBehaviour {
 		//chestAnim.OpenChest();
 		//System.Threading.Thread.Sleep(5000);
 		//StartCoroutine("WaitFiveSeconds");
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex +1 );
+		//SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex +1 );
+		pauseMenu.SetActive(true);
+		mainGame.SetActive(false);
 	}
 
 	IEnumerator WaitFiveSeconds()
