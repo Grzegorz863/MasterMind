@@ -734,169 +734,212 @@ public class Board : MonoBehaviour {
 		}
 	}
 
-	public void changeAllColor(){
-		
-		
-		if (counter == 0) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			cipher = GameObject.Find ("hiddenCipher1");
-			randomColorSet ();
-			cipher.GetComponent<Renderer> ().material.color = randomColor;
+	public void changeAllColor()
+	{
 
-			cipher = GameObject.Find ("hiddenCipher2");
-			randomColorSet ();
-			cipher.GetComponent<Renderer> ().material.color = randomColor;
 
-			cipher = GameObject.Find ("hiddenCipher3");
-			randomColorSet ();
-			cipher.GetComponent<Renderer> ().material.color = randomColor;
+		if (counter == 0)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			cipher = GameObject.Find("hiddenCipher1");
+			randomColorSet();
+			cipher.GetComponent<Renderer>().material.color = randomColor;
 
-			cipher = GameObject.Find ("hiddenCipher4");
-			randomColorSet ();
-			cipher.GetComponent<Renderer> ().material.color = randomColor;
+			cipher = GameObject.Find("hiddenCipher2");
+			randomColorSet();
+			cipher.GetComponent<Renderer>().material.color = randomColor;
 
-			changeColor0 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit0 ();
-		} else if (counter == 1) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor1 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit1 ();
-		} else if (counter == 2) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor2 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit2 ();
-		} else if (counter == 3) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor3 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit3 ();
-		} else if (counter == 4) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor4 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit4 ();
-		} else if (counter == 5) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor5 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit5 ();
-		} else if (counter == 6) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor6 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit6 ();
-		} else if (counter == 7) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor7 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit7 ();
-		} else if (counter == 8) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor8 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit8 ();
-		} else if (counter == 9) {
-			child = transform.Find ("stepsRound");
-			Text t = child.GetComponent<Text> ();
-			t.text = "STEPS IN THIS ROUND: " + counter + 1;
-			child2 = transform.Find ("timeRound");
-			Text p = child2.GetComponent<Text> ();
-			UpdateTime ();
-			p.text = "TIME IN THIS ROUND: " + timer;
-			changeColor9 ();
-			Debug.Log ("compareHalfHit()");
-			compareHalfHit ();
-			Debug.Log ("compareHit()");
-			compareHit ();
-			showHit9 ();
-		} else if (counter > 9) {
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex +1 );
+			cipher = GameObject.Find("hiddenCipher3");
+			randomColorSet();
+			cipher.GetComponent<Renderer>().material.color = randomColor;
+
+			cipher = GameObject.Find("hiddenCipher4");
+			randomColorSet();
+			cipher.GetComponent<Renderer>().material.color = randomColor;
+
+			changeColor0();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit0();
+		}
+		else if (counter == 1)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor1();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit1();
+		}
+		else if (counter == 2)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor2();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit2();
+		}
+		else if (counter == 3)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor3();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit3();
+		}
+		else if (counter == 4)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor4();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit4();
+		}
+		else if (counter == 5)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor5();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit5();
+		}
+		else if (counter == 6)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor6();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit6();
+		}
+		else if (counter == 7)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor7();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit7();
+		}
+		else if (counter == 8)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor8();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit8();
+		}
+		else if (counter == 9)
+		{
+			child = transform.Find("stepsRound");
+			Text t = child.GetComponent<Text>();
+			counter = counter + 1;
+			t.text = "STEPS IN THIS ROUND: " + counter;
+			counter = counter - 1;
+			child2 = transform.Find("timeRound");
+			Text p = child2.GetComponent<Text>();
+			UpdateTime();
+			p.text = "TIME IN THIS ROUND: " + timer * 100;
+			changeColor9();
+			Debug.Log("compareHalfHit()");
+			compareHalfHit();
+			Debug.Log("compareHit()");
+			compareHit();
+			showHit9();
+		}
+		else if (counter > 9)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
+
 
 	public void changeColor0(){
 		enemy = GameObject.Find("code01");
