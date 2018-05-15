@@ -7,13 +7,20 @@ public class ChestAnimation : MonoBehaviour {
 
 	private Animator anim;
 	private GameObject chest;
-	
+
+	/// <summary>
+	/// The begining function
+	/// </summary>
 	void Start () {
 		anim = GetComponent<Animator>();
 		anim.SetInteger("zmienna", 1);
 		chest = GameObject.Find("treasurechest_open");
 	}
-	
+
+
+	/// <summary>
+	/// Update is called once per frame
+	/// </summary>
 	void Update ()
 	{
 		if(Input.GetKeyDown(KeyCode.V))
@@ -29,13 +36,18 @@ public class ChestAnimation : MonoBehaviour {
 	}
 
 
-
+	/// <summary>
+	/// Open the chest
+	/// </summary>
 	public void OpenChest()
 	{
 		anim.SetInteger("zmienna", 1);
 		//anim.Play("Take 001");
 	}
 
+	/// <summary>
+	/// Close the chest
+	/// </summary>
 	public void CloseChest()
 	{
 		anim.SetInteger("zmienna", 2);

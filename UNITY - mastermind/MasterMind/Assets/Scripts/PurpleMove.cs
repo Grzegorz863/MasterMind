@@ -13,24 +13,36 @@ public class PurpleMove : MonoBehaviour {
 	float y;
 	float z;
 
-	void Start(){
+	/// <summary>
+	/// The begining function
+	/// </summary>
+	void Start()
+	{
 		x = gameObject.transform.position.x;
 		y = gameObject.transform.position.y;
 		z = gameObject.transform.position.z;
-
 	}
 
-	void Update(){
-		if (Input.GetMouseButtonUp (0)) {
+	/// <summary>
+	/// Update is called once per frame
+	/// </summary>
+	void Update()
+	{
+		if (Input.GetMouseButtonUp (0))
 			transform.position = new Vector3 (x, y, z);
-		}
 	}
 
-	void OnMouseDown() {
-
+	/// <summary>
+	/// Catching the shape with color
+	/// </summary>
+	void OnMouseDown()
+	{
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 	}
 
+	/// <summary>
+	/// Dropping the shape with color
+	/// </summary>
 	void OnMouseDrag()
 	{
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
@@ -38,9 +50,12 @@ public class PurpleMove : MonoBehaviour {
 		transform.position = curPosition;
 	}
 
-    void OnTriggerEnter(Collider collision)
+	/// <summary>
+	/// Collision detection
+	/// </summary>
+	/// <param name="collision">collider</param>
+	void OnTriggerEnter(Collider collision)
     {
-        // Tutaj kod wykonywany po wykryciu kolizji
         collision.gameObject.GetComponent<Renderer>().material.color = Color.magenta;
     }
 }

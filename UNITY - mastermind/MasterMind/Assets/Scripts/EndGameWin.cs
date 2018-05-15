@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class EndGameWin : MonoBehaviour {
 
-	public void QuitGame(){
+	/// <summary>
+	/// Quit the game
+	/// </summary>
+	public void QuitGame()
+	{
 		Debug.Log ("QUIT");
 		Application.Quit ();
 	}
 
-	public void NewGame(){
+	/// <summary>
+	/// Begin new game
+	/// </summary>
+	public void NewGame()
+	{
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex - 3);
 	}
 }

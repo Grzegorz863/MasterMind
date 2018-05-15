@@ -3,21 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
 
 	public Text timerText;
 	private float startTime;
-	void Start () {
+
+	/// <summary>
+	/// Start counting game time.
+	/// </summary>
+	void Start()
+	{
 		startTime = Time.time;
 	}
+
 	
-	// Update is called once per frame
-	void Update () {
+	/// <summary>
+	/// Displaying game time on the board
+	/// </summary>
+	void Update()
+	{
 		float t = Time.time - startTime;
 
 		string minutes = ((int)t / 60).ToString();
-		string seconds = (t % 60).ToString();
+		string seconds = (t % 60).ToString("f1");
 
-		timerText.text = "TIME IN THIS ROUND: " +minutes + ":"+ seconds;
+		timerText.text = "TIME IN THIS ROUND: " + minutes + ":" + seconds;
 	}
 }

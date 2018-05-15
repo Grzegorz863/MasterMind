@@ -4,38 +4,34 @@ using UnityEngine;
 
 public class ColorMove : MonoBehaviour {
 
-	public SpringJoint2D spring;
+	public SpringJoint2D springJoint;
 
-
+	/// <summary>
+	/// 
+	/// </summary>
 	void Awake()
 	{
-
-		spring = this.gameObject.GetComponent<SpringJoint2D>(); //"spring" is the SpringJoint2D component that I added to my object
-
-		spring.connectedAnchor = gameObject.transform.position;//i want the anchor position to start at the object's position
-
+		springJoint = this.gameObject.GetComponent<SpringJoint2D>(); 
+		springJoint.connectedAnchor = gameObject.transform.position;
 	}
 
-
+	/// <summary>
+	/// On click
+	/// </summary>
 	void OnMouseDown()
 	{
-
-		spring.enabled = true;//I'm reactivating the SpringJoint2D component each time I'm clicking on my object becouse I'm disabling it after I'm releasing the mouse click so it will fly in the direction i was moving my mouse
-
+		springJoint.enabled = true;
 	}
 
-
+	/// <summary>
+	/// On release
+	/// </summary>
 	void OnMouseDrag()        
 	{
-
-		if (spring.enabled = true) 
+		if (springJoint.enabled = true) 
 		{
-
-			Vector2 cursorPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);//getting cursor position
-
-			spring.connectedAnchor = cursorPosition;//the anchor get's cursor's position
-
-
+			Vector2 cursorPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			springJoint.connectedAnchor = cursorPosition;
 		}
 	}
 }
