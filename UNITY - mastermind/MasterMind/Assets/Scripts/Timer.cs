@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// This class is responsible for counting time in game
+/// </summary>
 public class Timer : MonoBehaviour
 {
 

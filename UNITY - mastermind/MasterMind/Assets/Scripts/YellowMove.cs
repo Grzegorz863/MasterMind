@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is responsible for moving yellow color
+/// </summary>
 [RequireComponent(typeof(BoxCollider))]
-
 public class YellowMove : MonoBehaviour {
 
 	private Vector3 screenPoint;
@@ -15,6 +17,7 @@ public class YellowMove : MonoBehaviour {
 	/// <summary>
 	/// The begining function
 	/// </summary>
+	/// <remarks>Start is called one time on the begining</remarks>
 	void Start()
 	{
 		x = gameObject.transform.position.x;
@@ -52,7 +55,8 @@ public class YellowMove : MonoBehaviour {
 	/// <summary>
 	/// Collision detection
 	/// </summary>
-	/// <param name="collision">collider</param>
+	/// <remarks>Collosion is detected after meeting 2 shapes</remarks>
+	/// <param name="collision">object of collider</param>
 	void OnTriggerEnter(Collider collision)
     {
         collision.gameObject.GetComponent<Renderer>().material.color = Color.yellow;

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// This class is responsible for moving purple color
+/// </summary>
 [RequireComponent(typeof(BoxCollider))]
 
 public class PurpleMove : MonoBehaviour {
@@ -16,6 +18,7 @@ public class PurpleMove : MonoBehaviour {
 	/// <summary>
 	/// The begining function
 	/// </summary>
+	/// <remarks>Start is called one time on the begining</remarks>
 	void Start()
 	{
 		x = gameObject.transform.position.x;
@@ -53,7 +56,8 @@ public class PurpleMove : MonoBehaviour {
 	/// <summary>
 	/// Collision detection
 	/// </summary>
-	/// <param name="collision">collider</param>
+	/// <remarks>Collosion is detected after meeting 2 shapes</remarks>
+	/// <param name="collision">object of collider</param>
 	void OnTriggerEnter(Collider collision)
     {
         collision.gameObject.GetComponent<Renderer>().material.color = Color.magenta;

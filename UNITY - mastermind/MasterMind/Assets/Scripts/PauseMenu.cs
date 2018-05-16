@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class is responsible for working pause menu
+/// </summary>
 public class PauseMenu : MonoBehaviour {
 
 	public static bool GameIsPaused = false;
@@ -12,6 +15,7 @@ public class PauseMenu : MonoBehaviour {
 	/// <summary>
 	/// Update is called once per frame
 	/// </summary>
+	/// <remarks>Checks if the Escape button has been pressed</remarks>
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{

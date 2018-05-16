@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class is responsible for moving colors
+/// </summary>
 public class ColorMove : MonoBehaviour {
 
 	public SpringJoint2D springJoint;
 
 	/// <summary>
-	/// 
+	/// Awake is used to initialize any variables or game state before the game starts
 	/// </summary>
 	void Awake()
 	{

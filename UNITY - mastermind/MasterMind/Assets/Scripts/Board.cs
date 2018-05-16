@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// The most important class in project
+/// </summary>
+/// <remarks>Class contain all Mastermind algorithm</remarks>
 [RequireComponent(typeof(Animator))]
 public class Board : MonoBehaviour
 {

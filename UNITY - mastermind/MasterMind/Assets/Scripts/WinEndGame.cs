@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class is responsible for service buttons on end game menu after win
+/// </summary>
 public class WinEndGame : MonoBehaviour {
 
 

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This class is responsible for service buttons on main menu
+/// </summary>
 public class MainMenu : MonoBehaviour {
 
 	/// <summary>

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The class responsible for chest animation
+/// </summary>
 public class ChestAnimation : MonoBehaviour {
 
 
@@ -11,6 +14,7 @@ public class ChestAnimation : MonoBehaviour {
 	/// <summary>
 	/// The begining function
 	/// </summary>
+	/// <remarks>Start is called one time on begining</remarks>
 	void Start () {
 		anim = GetComponent<Animator>();
 		anim.SetInteger("zmienna", 1);
@@ -42,7 +46,6 @@ public class ChestAnimation : MonoBehaviour {
 	public void OpenChest()
 	{
 		anim.SetInteger("zmienna", 1);
-		//anim.Play("Take 001");
 	}
 
 	/// <summary>
